@@ -1,4 +1,4 @@
-/* eslint no-console: 'off' */
+/* eslint no-console: off */
 'use strict';
 
 /**
@@ -8,16 +8,17 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
+const plumber = require('gulp-plumber');
+const wrapper = require('gulp-wrapper');
+const ngAnnotate = require('gulp-ng-annotate');
 const file = require('gulp-file');
+const rename = require('gulp-rename');
+const ngConstant = require('gulp-ng-constant');
+const angularWrapper = require('../utils/angular-wrapper');
 const packageFilename = require('../utils/package-filename');
-const loadConfig = require('../utils/load-config');
+const angularModuleName = require('../utils/angular-module-name');
 const config = require('../config');
-
-/**
- * Configuration
- */
-const DEST_JS = config.DEST_JS;
-const BUNDLE_JS = config.BUNDLE_JS;
+const build = require('../build');
 
 /**
  * Config module stream
@@ -26,21 +27,29 @@ module.exports = function buildConfig() {
 
   //Create file stream for configuration file
   let stream = file('app.config.js', JSON.stringify({}), {src: true})
-    //loadConfig()
+    .pipe(ngConstant({
+      name: angularModuleName('Config'),
+      stream: true,
+      constants: {
+        Config: config,
+      },
+    }))
+    .pipe(rename('app.config.js'))
+    .pipe(plumber())
     .pipe(babel({
       compact: false,
     }))
-    .on('error', error => {
-      console.error(error);
-    });
+    .on('error', console.error)
+    .pipe(ngAnnotate())
+    .pipe(wrapper(angularWrapper()));
 
   //Minify
-  if (BUNDLE_JS) {
+  if (build.BUNDLE_JS) {
     stream = stream
       .pipe(concat(packageFilename('.config.min.js')))
       .pipe(uglify());
   }
 
   //Write to destination folder and return
-  return stream.pipe(gulp.dest(DEST_JS));
+  return stream.pipe(gulp.dest(build.DEST_JS));
 };

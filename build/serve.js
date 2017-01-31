@@ -6,19 +6,20 @@
 const path = require('path');
 const browserSync = require('browser-sync').create();
 const serveStatic = require('serve-static');
-const config = require('./config');
+const build = require('./build');
 
 /**
- * Constants
+ * Build config
  */
-const PORT = config.PORT;
-const BASE_DIR = config.DEST_BUILD;
+const PORT = build.PORT;
+const BASE_DIR = build.DEST_BUILD;
+const WATCH_EXT = build.WATCH_EXT;
 
 /**
  * Middleware
  */
 const staticMiddleware = serveStatic(path.resolve(BASE_DIR));
-const spaMiddleware = function(req, res, next) {
+const spaMiddleware = function(req, res, next) { //eslint-disable-line no-unused-vars
   req.url = '/index.html';
   next();
 };
@@ -27,16 +28,9 @@ const spaMiddleware = function(req, res, next) {
  * Initialize browser sync
  */
 browserSync.init({
-  files: [
-    `${BASE_DIR}/**/*.css`,
-    `${BASE_DIR}/**/*.js`,
-    `${BASE_DIR}/**/*.html`,
-    `${BASE_DIR}/**/*.jpg`,
-    `${BASE_DIR}/**/*.png`,
-    `${BASE_DIR}/**/*.svg`,
-    `${BASE_DIR}/**/*.woff`,
-  ],
-  reloadDebounce: 1000,
+  files: WATCH_EXT.map(ext => `${BASE_DIR}/**/*.${ext}`),
+  reloadDebounce: 1500,
+  ghostMode: false,
   port: PORT,
   server: {
     baseDir: BASE_DIR,

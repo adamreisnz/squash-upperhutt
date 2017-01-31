@@ -9,15 +9,15 @@ const csso = require('gulp-csso');
 const rename = require('gulp-rename');
 const autoprefixer = require('gulp-autoprefixer');
 const packageFilename = require('../utils/package-filename');
-const config = require('../config');
+const build = require('../build');
 
 /**
- * Configuration
+ * Build configuration
  */
-const SRC_INDEX_SCSS = config.SRC_INDEX_SCSS;
-const DEST_CSS = config.DEST_CSS;
-const BUNDLE_CSS = config.BUNDLE_CSS;
-const AUTOPREFIXER = config.AUTOPREFIXER;
+const SRC_INDEX_SCSS = build.SRC_INDEX_SCSS;
+const DEST_CSS = build.DEST_CSS;
+const BUNDLE_CSS = build.BUNDLE_CSS;
+const AUTOPREFIXER = build.AUTOPREFIXER;
 
 /**
  * Build application SCSS files

@@ -1,0 +1,14 @@
+
+@import 'header/header';
+@import 'footer/footer';
+
+.AppWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	min-height: 100%;
+}
+.AppContents {
+	padding: $spacingLarge 0;
+	flex: 1;
+}

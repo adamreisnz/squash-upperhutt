@@ -5,16 +5,11 @@
  */
 const gulp = require('gulp');
 const buildAppCss = require('./build-app-css');
-const config = require('../config');
-
-/**
- * Configuration
- */
-const SRC_SCSS = config.SRC_SCSS;
+const build = require('../build');
 
 /**
  * Export task
  */
 module.exports = function watchAppCss() {
-  gulp.watch(SRC_SCSS, gulp.series(buildAppCss));
+  gulp.watch(build.SRC_SCSS, gulp.series(buildAppCss));
 };

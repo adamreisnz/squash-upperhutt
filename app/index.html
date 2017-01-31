@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="App" ng-strict-di>
 <head>
   <base href="/">
-  <title>Squash @ Upper Hutt</title>
+  <title><!-- @echo CFG.APP_TITLE --></title>
+  <!-- @if CFG.CSP -->
+  <meta http-equiv="Content-Security-Policy" content="<!-- @echo CFG.CSP -->">
+  <!-- @endif -->
   <meta charset="utf-8">
-  <meta name="author" content="Adam Reis, Liat Reis">
-  <meta name="description" content="At Squash @ Upper Hutt we welcome new members to come along and try squash. Our club social nights are Mondays and Thursdays, starting at 6:45 pm. Feel free to come along, and let someone know you are interested in having a go. We have racquets to loan you and can set you up with a game.">
+  <meta name="author" content="">
+  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="favicon.png">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
   <!-- lib:css -->
   <!-- endinject -->
   <!-- app:css -->
   <!-- endinject -->
 </head>
 <body lang="en">
+  <ui-view></ui-view>
   <!-- lib:js -->
   <!-- endinject -->
+  <!-- @if CFG.SENTRY_DSN -->
+  <script src="https://cdn.ravenjs.com/3.9.1/raven.min.js"></script>
+  <!-- @endif -->
   <!-- app:js -->
   <!-- endinject -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=<!-- @echo CFG.GOOGLE_MAPS_API_KEY -->"></script>
+  <!-- @if CFG.ANALYTICS_ENABLED=true -->
+  <script async src="//www.google-analytics.com/analytics.js"></script>
+  <!-- @endif -->
 </body>
 </html>

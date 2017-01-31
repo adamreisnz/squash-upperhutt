@@ -1,7 +1,21 @@
-import Vue from 'vue';
-import App from './App.vue';
 
-new Vue({ //eslint-disable-line no-new
-  el: '#app',
-  render: (h) => h(App),
-});
+/**
+ * Module definition and dependencies
+ */
+angular.module('App', [
+
+  //Angular & 3rd party
+  'ui.router',
+
+  //Meanie modules
+  'Log.Service',
+
+  //Core modules
+  'App.Config',
+  'App.Templates',
+  'App.Component',
+  'App.Error',
+
+  //App components
+  'App.Home',
+]);

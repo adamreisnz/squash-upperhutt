@@ -8,14 +8,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 const packageFilename = require('../utils/package-filename');
-const config = require('../config');
-
-/**
- * Configuration
- */
-const SRC_LIB = config.SRC_LIB;
-const DEST_LIB = config.DEST_LIB;
-const BUNDLE_LIB = config.BUNDLE_LIB;
+const build = require('../build');
 
 /**
  * Build lib javascript files
@@ -23,10 +16,10 @@ const BUNDLE_LIB = config.BUNDLE_LIB;
 module.exports = function buildLibJs() {
 
   //Create stream
-  let stream = gulp.src(SRC_LIB);
+  let stream = gulp.src(build.SRC_LIB);
 
   //Bundling?
-  if (BUNDLE_LIB) {
+  if (build.BUNDLE_LIB) {
     stream = stream
       .pipe(sourcemaps.init())
         .pipe(concat(packageFilename('lib', '.min.js')))
@@ -35,5 +28,5 @@ module.exports = function buildLibJs() {
   }
 
   //Write to public folder and return
-  return stream.pipe(gulp.dest(DEST_LIB));
+  return stream.pipe(gulp.dest(build.DEST_LIB));
 };

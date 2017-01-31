@@ -5,27 +5,20 @@
  */
 const path = require('path');
 const gulp = require('gulp');
-const config = require('../config');
+const build = require('../build');
 const packageFilename = require('./package-filename');
-
-/**
- * Configuration
- */
-const SRC_LIB = config.SRC_LIB;
-const DEST_LIB = config.DEST_LIB;
-const BUNDLE_LIB = config.BUNDLE_LIB;
 
 /**
  * Get app sources
  */
 module.exports = function getLibSources() {
   let files = [];
-  if (BUNDLE_LIB) {
-    files.push(DEST_LIB + '/' + packageFilename('lib', '.min.js'));
+  if (build.BUNDLE_LIB) {
+    files.push(build.DEST_LIB + '/' + packageFilename('lib', '.min.js'));
   }
   else {
-    files = SRC_LIB.map(file => {
-      return DEST_LIB + '/' + path.basename(file);
+    files = build.SRC_LIB.map(file => {
+      return build.DEST_LIB + '/' + path.basename(file);
     });
   }
   return gulp.src(files);
