@@ -5,7 +5,6 @@
 angular.module('App.Component', [
   'App.Controller',
   'App.Header.Component',
-  'App.Footer.Component',
 ])
 
 /**

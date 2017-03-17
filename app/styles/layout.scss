@@ -1,8 +1,5 @@
 
-/**
- * Containers
- */
-.container {
+.Container {
 	margin: 0 auto;
   padding: 0 $spacing;
 	width: 100%;
@@ -10,4 +7,7 @@
     max-width: $breakPointLarge;
   	padding: 0 $spacingLarge;
   }
+}
+.Panel {
+  padding: 2rem 0;
 }
