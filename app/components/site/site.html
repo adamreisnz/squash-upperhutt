@@ -1,0 +1,12 @@
+<site-header
+  is-auto-scrolling="$ctrl.isAutoScrolling"
+  smooth-scroll-to="$ctrl.smoothScrollTo($event)"
+></site-header>
+<main
+  class="site-contents"
+  id="top"
+  ui-view
+></main>
+<site-footer
+  smooth-scroll-to="$ctrl.smoothScrollTo($event)"
+></site-footer>

@@ -1,0 +1,36 @@
+
+.Signup {
+  small {
+    color: fade-out($colorWhite, .6);
+  }
+  .btn-primary {
+    background: $colorPrimary;
+    &:hover {
+			background: darken($colorPrimary, 5%);
+		}
+  }
+}
+.signup-header {
+	border-bottom: 1px solid $colorBorderLight;
+	padding-bottom: .75rem;
+}
+
+.Membership-options {
+  border: 1px solid $colorBorderLight;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background: $colorPrimary;
+  td {
+    border: 1px solid $colorBorderLight;
+    padding: .5rem 1rem;
+    &:first-child {
+      padding-right: 2rem;
+      font-weight: $fontWeightBold;
+      min-width: 10rem;
+    }
+    &:last-child {
+      padding-left: 2rem;
+      font-weight: $fontWeightBold;
+    }
+  }
+}

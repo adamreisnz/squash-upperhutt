@@ -1,0 +1,78 @@
+
+.HomeDetails-inner {
+	display: flex;
+	flex-direction: row;
+	padding: .5rem 0;
+	margin-top: -2.5rem;
+	height: 2.5rem;
+	div {
+		flex: 1 0 0;
+		width: 50%;
+		text-align: center;
+		white-space: nowrap;
+		font-size: $fontSizeSmall;
+		overflow: hidden;
+		&.email {
+			text-overflow: ellipsis;
+			color: $colorWhite; //Color for ellipsis, needed for Chrome on Android
+		}
+		&.facebook, &.location {
+			display: none;
+		}
+	}
+	a {
+		transition: color .2s linear;
+		color: $colorWhite;
+		&:hover {
+			color: $colorPrimary;
+			text-decoration: none;
+		}
+	}
+	i {
+		font-size: 1.1rem;
+		padding-right: .5rem;
+	}
+
+	@media (min-width: 480px) {
+		div {
+			width: 50%;
+			&.email {
+				text-align: left;
+			}
+			&.facebook {
+				display: block;
+				text-align: right;
+			}
+		}
+		margin-top: -3.25rem;
+		height: 3.25rem;
+		i {
+			font-size: 1.5rem;
+		}
+	}
+	@media (min-width: 768px) {
+		div {
+			width: 33.3%;
+			&.location {
+				display: block;
+				text-align: right;
+			}
+			&.email {
+				text-align: left;
+			}
+			&.facebook {
+				display: block;
+				text-align: center;
+			}
+		}
+	}
+	@media (min-width: 1024px) {
+		div {
+			width: 25%;
+			margin-bottom: 0;
+		}
+		a, i:before {
+			transition: font-size .2s linear;
+		}
+	}
+}

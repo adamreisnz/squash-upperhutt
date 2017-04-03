@@ -1,34 +1,8 @@
 
-
-.HomeBanner {
-  min-height: 600px;
-  background: url('../images/bg2.jpg');
-  background-position: center;
-  background-size: cover;
-  color: $colorWhite;
-  padding: 1rem;
-  display: flex;
-  align-items: flex-end;
-}
-
-
-.HomeSignUp {
-  background: $colorSecondary;
-  p, h2 {
-    color: $colorWhite;
-  }
-}
-.HomeMoreInfo {
-  background: $colorPrimary;
-  p, h2 {
-    color: $colorWhite;
-  }
-}
-.HomeContactDetails-BoxContainer {
-  display: flex;
-  justify-content: space-between;
-}
-.HomeSponsors-BoxContainer {
-  display: flex;
-  justify-content: space-between;
-}
+@import 'hero/hero';
+@import 'details/details';
+@import 'club/club';
+@import 'about/about';
+@import 'signup/signup';
+@import 'sponsors/sponsors';
+@import 'contact/contact';

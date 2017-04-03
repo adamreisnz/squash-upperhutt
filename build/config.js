@@ -43,6 +43,8 @@ function loadConfig(env) {
       return loadConfig('prod');
     }
     if (env !== 'local') {
+      console.log(e);
+      console.log('KANKER TERIGGN');
       console.log(
         chalk.red('Could not load environment configuration file'),
         chalk.magenta(env + '.js')

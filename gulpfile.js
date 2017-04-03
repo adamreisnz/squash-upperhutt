@@ -24,7 +24,6 @@ const watchAppCss = require('./build/tasks/watch-app-css');
 const watchIndex = require('./build/tasks/watch-index');
 const watchAssets = require('./build/tasks/watch-assets');
 const watchConfig = require('./build/tasks/watch-config');
-const updateRedirects = require('./build/tasks/update-redirects');
 
 //Log
 console.log('Running in', chalk.magenta(config.ENV), 'environment');
@@ -35,7 +34,7 @@ console.log('Running in', chalk.magenta(config.ENV), 'environment');
 gulp.task('build', gulp.series(
   clean,
   gulp.parallel(
-    gulp.series(copyAssets, updateRedirects),
+    gulp.series(copyAssets),
     buildConfig,
     buildAppJs,
     buildAppCss,

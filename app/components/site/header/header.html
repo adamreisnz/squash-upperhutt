@@ -1,0 +1,19 @@
+<header class="SiteHeader" ng-class="{compact: $ctrl.isScrolled}">
+	<div class="confined">
+		<div class="wrapper" ng-cloak>
+			<h1 class="title">
+				<a ui-sref="home" title="Home" ui-sref="home">Squash @ Upper Hutt</a>
+			</h1>
+			<button type="button" class="menu-toggle" ng-click="$ctrl.toggleMenu()" ng-class="{toggled: $ctrl.isMenuVisible}">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav class="menu" ng-class="{visible: $ctrl.isMenuVisible, mobile: $ctrl.isMobile}" ng-click="$ctrl.toggleMenu(false)">
+				<menu ng-cloak>
+					<li ng-repeat="item in $ctrl.menu" class="{{item.classes}}" ng-if="!item.abstract"><a ng-click="$ctrl.navigateTo(item)" ng-class="{active: $ctrl.isActiveState(item.sref)}" title="{{item.title}}">{{item.title}}</a></li>
+				</menu>
+			</nav>
+		</div>
+	</div>
+</header>

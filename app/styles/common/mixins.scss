@@ -1,0 +1,12 @@
+
+/**
+ * Light header
+ */
+@mixin lightHeader($color: $colorTextLight) {
+	font-size: $fontSizeSmall;
+	font-weight: $fontWeightNormal;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	margin: 0 0 .5rem;
+	color: $color;
+}

@@ -1,0 +1,75 @@
+
+.contact-section {
+  a {
+    color: $colorSecondary;
+  }
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid $colorBorderLight;
+	.contact-form {
+		margin-bottom: $marginSection;
+		.error {
+			color: $colorTextError;
+			font-size: $fontSizeSmall;
+		}
+		.sent {
+			transition: opacity .2s linear;
+			&.ng-hide-remove, &.ng-hide-add.ng-hide-add-active {
+				opacity: 0;
+			}
+			&.ng-hide-add, &.ng-hide-remove.ng-hide-remove-active {
+				opacity: 1;
+			}
+		}
+	}
+	.contact-details {
+		line-height: 2rem;
+		margin-bottom: $marginSection;
+		display: flex;
+		flex-flow: row wrap;
+		div {
+			width: 100%;
+			margin-bottom: .75rem;
+		}
+		i {
+			display: inline-block;
+			width: 20px;
+			margin-right: .5rem;
+		}
+	}
+	@media (min-width: 550px) {
+		.contact-details {
+			div {
+				width: 50%;
+			}
+		}
+	}
+	@media (min-width: 768px) {
+		flex-direction: row;
+		padding-bottom: 5rem;
+		.contact-form {
+			padding-right: $marginSection;
+			margin-bottom: 0;
+			flex: 1 0 0;
+		}
+		.contact-details {
+			flex: 0 0 17rem;
+			flex-flow: column nowrap;
+			div {
+				width: auto;
+			}
+		}
+	}
+}
+.contact-header {
+	@media (min-width: 768px) {
+		header {
+			padding-right: $marginSection;
+		}
+		display: flex;
+		flex-direction: row;
+		.filler {
+			flex: 0 0 17rem;
+		}
+	}
+}

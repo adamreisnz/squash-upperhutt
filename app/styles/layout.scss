@@ -1,13 +1,178 @@
 
-.Container {
-	margin: 0 auto;
-  padding: 0 $spacing;
-	width: 100%;
-  @include breakPointLarge {
-    max-width: $breakPointLarge;
-  	padding: 0 $spacingLarge;
-  }
+html {
+	font-size: 100%;
 }
-.Panel {
-  padding: 2rem 0;
+html, body {
+	width: 100%;
+	height: 100%;
+}
+body {
+	font-family: $fontFamily;
+	font-size: $fontSizeNormal;
+	font-weight: $fontWeightNormal;
+	color: $colorText;
+	background: $colorBgDark;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+p {
+	font-size: $fontSizeNormal;
+	line-height: $lineHeight;
+	margin-bottom: $marginParagraph;
+	text-align: justify;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: $fontWeightNormal;
+	color: $colorBlack;
+}
+section, article {
+	h1 {
+		font-size: 2rem;
+		@media (min-width: 480px) {
+			font-size: 2.5rem;
+		}
+		@media (min-width: 768px) {
+			font-size: 2.75rem;
+		}
+	}
+	h2, h3, h4, h5, h6 {
+		margin-top: $marginSection;
+	}
+	h2 {
+		font-size: 2rem;
+		margin-bottom: .5rem;
+	}
+	h3 {
+		font-size: 1.4rem;
+		margin-bottom: .5rem;
+	}
+	h4 {
+		font-weight: $fontWeightBold;
+	}
+	h5 {
+		text-decoration: underline;
+	}
+	header {
+		margin-bottom: $marginSection;
+		p {
+			letter-spacing: 1px;
+			margin: $marginParagraph/2 0 0;
+			font-size: $fontSizeSmall;
+			color: $colorTextLight;
+		}
+	}
+}
+a {
+	color: $colorTextLink;
+	text-decoration: none;
+	cursor: pointer;
+	&:hover {
+		text-decoration: underline;
+	}
+	&:hover, &:active {
+		outline: none;
+	}
+}
+ul, ol {
+	margin: 0 0 $marginParagraph 1.75rem;
+	line-height: $lineHeight;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+ul li {
+	list-style-type: square;
+}
+img {
+	max-width: 100%;
+}
+hr {
+	height: 0;
+	border: 0;
+	width: 100%;
+	margin: $marginSection auto;
+	border-bottom: 1px solid $colorBorderDark;
+}
+
+strong, .bold {
+	font-weight: $fontWeightBold;
+}
+em, .italic {
+	font-style: $fontStyleItalic;
+}
+small, .small {
+	font-size: $fontSizeSmall;
+}
+
+.confined {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+	@media (min-width: 480px) {
+		padding: 0 2rem;
+	}
+	@media (min-width: 768px) {
+		padding: 0 3rem;
+	}
+	@media (min-width: 1024px) {
+		padding: 0 5rem;
+	}
+}
+
+.padded {
+	padding-top: $marginSection;
+	padding-bottom: $marginSection;
+	@media (min-width: 1024px) {
+		padding-top: $marginSection*1.5;
+		padding-bottom: $marginSection*1.5;
+	}
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+.offset {
+	margin-top: $heightHeader;
+}
+.white {
+	background: $colorWhite;
+}
+.blue {
+  background: $colorSecondary;
+  h1 {
+    color: $colorWhite;
+  }
+  color: $colorWhite;
+}
+.dark {
+	color: $colorWhite;
+	h1 {
+		color: $colorWhite;
+	}
+	background: $colorBgDark;
+	&.faded {
+		background: fade-out(darken($colorBgDark, .2), .7);
+	}
+	.form-control {
+		border: 1px solid $colorBorderLight;
+	}
+}
+.light {
+	background-color: $colorBgLight;
+}
+.shadow {
+	box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+.gradient {
+	background-image: -webkit-linear-gradient(110deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%, rgba(255,255,255,0.05) 30%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background-image: -o-linear-gradient(110deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%, rgba(255,255,255,0.05) 30%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+	background-image: -ms-linear-gradient(110deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%, rgba(255,255,255,0.05) 30%,rgba(255,255,255,0) 100%); /* IE10+ */
+	background-image: linear-gradient(110deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%, rgba(255,255,255,0.05) 30%,rgba(255,255,255,0) 100%); /* W3C */
+}
+
+.four-oh-four {
+	h1, p:last-child {
+		margin-bottom: $marginSection;
+	}
 }

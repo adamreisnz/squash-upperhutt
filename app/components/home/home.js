@@ -2,8 +2,14 @@
 /**
  * Module definition and dependencies
  */
-angular.module('App.Home', [
-  'App.Home.Controller',
+angular.module('Site.Home', [
+  'Site.Home.Hero',
+  'Site.Home.Details',
+  'Site.Home.Club',
+  'Site.Home.About',
+  'Site.Home.Signup',
+  'Site.Home.Sponsors',
+  'Site.Home.Contact',
 ])
 
 /**
@@ -11,7 +17,7 @@ angular.module('App.Home', [
  */
 .config($stateProvider => {
   $stateProvider.state('home', {
-    parent: 'app',
+    parent: 'site',
     url: '/',
     component: 'homeRoute',
   });
@@ -21,6 +27,5 @@ angular.module('App.Home', [
  * Route component
  */
 .component('homeRoute', {
-  controller: 'HomeCtrl',
   templateUrl: 'home/home.html',
 });

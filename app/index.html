@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="App" ng-strict-di>
+<html ng-app="Site" ng-strict-di>
 <head>
   <base href="/">
   <title><!-- @echo CFG.APP_TITLE --></title>
@@ -7,26 +7,21 @@
   <meta http-equiv="Content-Security-Policy" content="<!-- @echo CFG.CSP -->">
   <!-- @endif -->
   <meta charset="utf-8">
-  <meta name="author" content="">
-  <meta name="description" content="">
+  <meta name="author" content="Adam Reis">
+  <meta name="description" content="Squash @ Upper Hutt">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600">
   <!-- lib:css -->
   <!-- endinject -->
   <!-- app:css -->
   <!-- endinject -->
 </head>
-<body lang="en">
+<body lang="en" detect-scrolling>
   <ui-view></ui-view>
   <!-- lib:js -->
   <!-- endinject -->
-  <!-- @if CFG.SENTRY_DSN -->
-  <script src="https://cdn.ravenjs.com/3.9.1/raven.min.js"></script>
-  <!-- @endif -->
   <!-- app:js -->
   <!-- endinject -->
-  <!-- @if CFG.ANALYTICS_ENABLED=true -->
-  <script async src="//www.google-analytics.com/analytics.js"></script>
-  <!-- @endif -->
 </body>
 </html>

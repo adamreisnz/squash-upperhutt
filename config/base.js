@@ -17,20 +17,4 @@ module.exports = {
   APP_REVISION: git.short(),
   APP_TITLE: 'Squash @ Upper Hutt',
   APP_BASE_URL: '',
-
-  //API
-  API_BASE_URL: '',
-  API_BASE_PATH: '',
-  API_ENFORCE_DATA_FORMAT: true,
-  API_NETWORK_TIMEOUT: 20,
-
-  //Authentication
-  AUTH_CLIENT_IDENTIFIER: pkg.name,
-
-  //Content security policy
-  CSP: '',
-
-  //Sentry
-  SENTRY_ORIGIN: 'client',
-  SENTRY_DSN: '',
 };

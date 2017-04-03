@@ -8,15 +8,6 @@
     "email": "adam@reis.nz",
     "url": "http://adam.reis.nz/"
   },
-  "contributors": [
-    {
-      "name": "Liat Reis",
-      "email": "liat@reis.nz",
-      "url": "http://liat.reis.nz/"
-    }
-  ],
-  "license": "SEE LICENSE IN LICENSE.md",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/adamreisnz/squash-upperhutt"
@@ -24,29 +15,29 @@
   "bugs": {
     "url": "https://github.com/adamreisnz/squash-upperhutt/issues"
   },
-  "keywords": [],
+  "license": "SEE LICENSE IN LICENSE.md",
+  "private": true,
   "engines": {
     "node": "^7.4.0"
   },
   "scripts": {
-    "reinstall": "rimraf node_modules && yarn cache clean && yarn install",
+    "reinstall": "rimraf node_modules && npm cache clean && npm install",
     "build": "gulp build",
     "build:dev": "gulp build --env dev",
     "build:prod": "gulp build --env production",
-    "serve": "node build/serve.js --env dev",
     "preserve": "lsof -n -i:8080 | grep LISTEN | awk '{print $2}' | xargs kill -9",
-    "prestart": "yarn run build -s",
-    "start": "parallelshell \"yarn run serve -s\" \"yarn run watch -s\"",
-    "dev": "yarn start",
+    "serve": "node build/serve.js",
+    "prestart": "npm run build -s",
+    "start": "parallelshell \"npm run serve -s\" \"npm run watch -s\"",
     "lint": "eslint . --fix",
-    "pretest": "yarn run lint -s",
+    "test": "gulp test",
     "watch": "gulp watch",
     "postversion": "git commit -a -m \"[bump] $npm_package_version\" && git push"
   },
   "dependencies": {
-    "angular": "1.6.1",
-    "angular-ui-router": "1.0.0-rc.1",
-    "meanie-angular-log": "^1.2.1"
+    "angular": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-ui-router": "1.0.0-rc.1"
   },
   "devDependencies": {
     "babel-polyfill": "^6.20.0",
@@ -77,7 +68,7 @@
     "gulp-wrapper": "^1.0.0",
     "merge-stream": "^1.0.1",
     "parallelshell": "^2.0.0",
-    "replace-in-file": "^2.0.3",
+    "phantomjs-prebuilt": "^2.1.14",
     "rimraf": "^2.5.4",
     "serve-static": "^1.11.1",
     "yargs": "^6.5.0"

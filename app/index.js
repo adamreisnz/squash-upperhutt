@@ -2,20 +2,22 @@
 /**
  * Module definition and dependencies
  */
-angular.module('App', [
+angular.module('Site', [
 
   //Angular & 3rd party
+  'ngAnimate',
   'ui.router',
-
-  //Meanie modules
-  'Log.Service',
+  'smoothScroll',
 
   //Core modules
-  'App.Config',
-  'App.Templates',
-  'App.Component',
-  'App.Error',
+  'Site.Config',
+  'Site.Templates',
+  'Site.Component',
 
-  //App components
-  'App.Home',
+  //Site modules
+  'Site.Home',
+
+  //Shared modules
+  'Shared.DetectScrolling.Directive',
+  'Shared.HasError.Directive',
 ]);

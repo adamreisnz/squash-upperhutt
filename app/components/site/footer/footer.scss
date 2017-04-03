@@ -1,0 +1,13 @@
+
+.SiteFooter {
+	padding: 1rem 0;
+	background: $colorBgDark;
+	p {
+		font-size: $fontSizeSmall;
+		text-align: center;
+		color: fade-out($colorWhite, .8);
+	}
+	a, a:hover {
+		color: fade-out($colorWhite, .8);
+	}
+}

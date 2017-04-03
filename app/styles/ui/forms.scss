@@ -1,0 +1,47 @@
+
+input, select, textarea {
+	font-family: $fontFamily;
+	font-size: $fontSizeNormal;
+	font-weight: $fontWeightNormal;
+	color: $colorText;
+}
+
+.form-label {
+	display: block;
+	clear: both;
+	height: $lineHeight;
+	line-height: $lineHeight;
+	margin-bottom: $marginParagraph/2;
+	font-size: $fontSizeSmall;
+	color: $colorTextLight;
+}
+
+.form-control {
+	width: 100%;
+	color: $colorText;
+	border: 1px solid $colorBorderDark;
+	padding: $lineHeight*0.5 $lineHeight*0.75;
+	background: $colorWhite;
+}
+
+.form-group {
+	margin-bottom: $marginParagraph/2;
+	&.has-error {
+		.form-control {
+			color: $colorTextError;
+		}
+	}
+}
+
+::-webkit-input-placeholder {
+	font-size: $fontSizeNormal;
+	color: $colorTextLight;
+}
+::-moz-placeholder {
+	font-size: $fontSizeNormal;
+	color: $colorTextLight;
+}
+:-ms-input-placeholder {
+	font-size: $fontSizeNormal;
+	color: $colorTextLight;
+}

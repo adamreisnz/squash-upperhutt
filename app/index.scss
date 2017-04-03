@@ -1,11 +1,31 @@
 
 /**
- * SCSS index
+ * Variables
  */
 @import 'styles/variables';
-@import 'styles/tools';
-@import 'styles/reset';
-@import 'styles/elements';
+
+/**
+ * Common
+ */
+@import 'styles/common/html5reset';
+@import 'styles/common/fontello';
+@import 'styles/common/mixins';
+
+/**
+ * Site and components
+ */
 @import 'styles/layout';
-@import 'styles/components';
-@import 'styles/utility';
+@import 'styles/ui/forms';
+@import 'styles/ui/buttons';
+
+/**
+ * Modules
+ */
+@import 'components/site/header/header';
+@import 'components/site/footer/footer';
+@import 'components/home/home';
+
+/**
+ * Overrides
+ */
+@import 'styles/common/overrides';

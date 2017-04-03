@@ -1,0 +1,22 @@
+
+.Club {
+  display: flex;
+  justify-content: space-between;
+  @media (min-width: 768px) {
+
+	}
+	@media (min-width: 1024px) {
+
+	}
+}
+.ClubSidebar {
+  flex: 0 0 18rem;
+  padding-right: 4rem;
+}
+.ClubIntro {
+  flex: 1;
+}
+.ClubSignup {
+  display: block;
+  margin: 2rem auto;
+}
