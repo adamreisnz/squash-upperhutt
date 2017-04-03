@@ -5,7 +5,7 @@
 angular.module('Site', [
 
   //Angular & 3rd party
-  'ngAnimate',
+  'ngMessages',
   'ui.router',
   'smoothScroll',
 

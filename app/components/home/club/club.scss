@@ -6,9 +6,6 @@
     flex-direction: row;
     justify-content: space-between;
 	}
-	@media (min-width: 1024px) {
-
-	}
 }
 .ClubSidebar {
   order: 2;
@@ -23,6 +20,9 @@
 .ClubIntro {
   flex: 1;
   order: 1;
+  h1 {
+    margin-bottom: 1rem;
+  }
   @media (min-width: 768px) {
     order: 2;
   }
@@ -30,4 +30,19 @@
 .ClubSignup {
   display: block;
   margin: 2rem auto;
+  max-width: 300px;
+}
+.ClubIntro-HeaderBreak {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+.ClubLogo {
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+}
+.ClubFacebook img {
+  display: block;
+  margin: 0 auto;
 }

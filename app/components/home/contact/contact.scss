@@ -9,8 +9,11 @@
 	.contact-form {
 		margin-bottom: $marginSection;
 		.error {
-			color: $colorTextError;
+			color: #dd2222;
 			font-size: $fontSizeSmall;
+      margin-top: 0;
+      padding-bottom: .5rem;
+      margin-top: -.25rem;
 		}
 		.sent {
 			transition: opacity .2s linear;

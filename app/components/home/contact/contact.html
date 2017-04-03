@@ -9,7 +9,7 @@
   	</div>
   	<div class="contact-section">
   		<div class="contact-form">
-  			<form class="form" name="$ctrl.form" ng-submit="$ctrl.submit()" novalidate ng-model-options="{updateOn: 'blur', debounce: {blur: 0}}">
+  			<form class="form" name="$ctrl.form" ng-submit="$ctrl.submit()" novalidate>
   				<div class="form-group" has-error="$ctrl.form.name">
   					<input class="form-control" type="text" name="name" id="name" ng-model="$ctrl.contact.name" required placeholder="name">
   				</div>

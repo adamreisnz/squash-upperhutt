@@ -34,7 +34,7 @@ const SRC_HTML = ['app/components/**/*.html'];
 const SRC_LIB = [
   'babel-polyfill/dist/polyfill.js',
   'angular/angular.js',
-  'angular-animate/angular-animate.js',
+  'angular-messages/angular-messages.js',
   'angular-ui-router/release/angular-ui-router.js',
 ].map(lib => 'node_modules/' + lib);
 
