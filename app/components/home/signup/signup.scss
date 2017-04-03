@@ -15,22 +15,35 @@
 	border-bottom: 1px solid $colorBorderLight;
 	padding-bottom: .75rem;
 }
-.Membership-options {
-  border: 1px solid $colorBorderLight;
-  border-collapse: collapse;
+.MembershipOptions {
+  // border: 1px solid $colorBorderLight;
   margin-bottom: 1rem;
   background: $colorPrimary;
-  td {
-    border: 1px solid $colorBorderLight;
+}
+.MembershipOption {
+  border: 1px solid $colorBorderLight;
+  border-bottom: none;
+  &:last-child {
+    border-bottom: 1px solid $colorBorderLight;
+  }
+  span {
+    display: block;
     padding: .5rem 1rem;
-    &:first-child {
-      padding-right: 2rem;
+    &:first-child, &:last-child {
       font-weight: $fontWeightBold;
-      min-width: 10rem;
     }
-    &:last-child {
-      padding-left: 2rem;
-      font-weight: $fontWeightBold;
+  }
+  @media (min-width: 768px) {
+    display: flex;
+    span {
+      flex: 1;
+      &:first-child {
+        flex: 0 0 10rem;
+      }
+      &:last-child {
+        padding-left: 2rem;
+        flex: 0 0 5rem;
+      }
     }
   }
 }
