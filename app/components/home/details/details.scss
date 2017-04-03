@@ -39,10 +39,6 @@
 			&.email {
 				text-align: left;
 			}
-			&.facebook {
-				display: block;
-				text-align: right;
-			}
 		}
 		margin-top: -3.25rem;
 		height: 3.25rem;
@@ -60,16 +56,16 @@
 			&.email {
 				text-align: left;
 			}
-			&.facebook {
-				display: block;
-				text-align: center;
-			}
 		}
 	}
 	@media (min-width: 1024px) {
 		div {
 			width: 25%;
 			margin-bottom: 0;
+      &.facebook {
+        display: block;
+        text-align: center;
+      }
 		}
 		a, i:before {
 			transition: font-size .2s linear;

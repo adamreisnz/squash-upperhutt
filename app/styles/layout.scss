@@ -144,6 +144,9 @@ small, .small {
     color: $colorWhite;
   }
   color: $colorWhite;
+  hr {
+    border-bottom: 1px solid $colorBorderLight;
+  }
 }
 .dark {
 	color: $colorWhite;
