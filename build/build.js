@@ -32,7 +32,7 @@ const SRC_HTML = ['app/components/**/*.html'];
 
 //Libraries
 const SRC_LIB = [
-  'babel-polyfill/dist/polyfill.js',
+  '@babel/polyfill/dist/polyfill.js',
   'angular/angular.js',
   'angular-messages/angular-messages.js',
   'angular-ui-router/release/angular-ui-router.js',

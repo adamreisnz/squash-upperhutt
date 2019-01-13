@@ -13,10 +13,16 @@ const build = require('../build');
  * Templates module stream
  */
 module.exports = function templatesModuleStream() {
-  return gulp.src(build.SRC_HTML)
+  return gulp
+    .src(build.SRC_HTML)
     .pipe(htmlclean())
     .pipe(angularTemplateCache({
       module: angularModuleName('Templates'),
       standalone: true,
+      transformUrl(url) {
+        return url
+          .replace(/^\//, '')
+          .replace(/^\\/, '');
+      },
     }));
 };

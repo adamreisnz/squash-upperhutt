@@ -10,7 +10,6 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const plumber = require('gulp-plumber');
 const wrapper = require('gulp-wrapper');
-const ngAnnotate = require('gulp-ng-annotate');
 const file = require('gulp-file');
 const rename = require('gulp-rename');
 const ngConstant = require('gulp-ng-constant');
@@ -40,7 +39,6 @@ module.exports = function buildConfig() {
       compact: false,
     }))
     .on('error', console.error)
-    .pipe(ngAnnotate())
     .pipe(wrapper(angularWrapper()));
 
   //Minify

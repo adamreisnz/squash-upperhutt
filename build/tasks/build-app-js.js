@@ -12,7 +12,6 @@ const uglify = require('gulp-uglify');
 const plumber = require('gulp-plumber');
 const wrapper = require('gulp-wrapper');
 const sourcemaps = require('gulp-sourcemaps');
-const ngAnnotate = require('gulp-ng-annotate');
 const angularWrapper = require('../utils/angular-wrapper');
 const packageFilename = require('../utils/package-filename');
 const templatesModuleStream = require('../utils/templates-module-stream');
@@ -52,7 +51,6 @@ module.exports = function buildAppJs() {
     .on('error', error => {
       console.error(error);
     })
-    .pipe(ngAnnotate())
     .pipe(wrapper(angularWrapper()));
 
   //Minify
