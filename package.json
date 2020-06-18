@@ -35,7 +35,7 @@
     "postversion": "git commit -a -m \"[bump] $npm_package_version\" && git push"
   },
   "dependencies": {
-    "angular": "^1.7.5",
+    "angular": "^1.8.0",
     "angular-messages": "^1.7.5",
     "angular-ui-router": "1.0.20"
   },
